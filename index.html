@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis: Kemiskinan Perkotaan</title>
+    <!-- Memuat Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Memuat Library Ikon (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Memuat Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style untuk membuat ikon lebih tebal */
+        [data-lucide] {
+            stroke-width: 2.5px;
+        }
+        
+        /* CSS untuk Modal Pop-up */
+        #gemini-modal {
+            transition: opacity 0.3s ease;
+        }
+        
+        /* CSS untuk Spinner Loading */
+        .loader {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto; /* Center the spinner */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white shadow-2xl rounded-xl overflow-hidden">
+        
+        <!-- 1. Judul Utama -->
+        <header class="bg-gray-800 text-white p-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-2">MEMBEDAH KEMISKINAN PERKOTAAN</h1>
+            <p class="text-lg md:text-xl text-gray-300">Sebuah Infografis Sosiologi</p>
+        </header>
+
+        <div class="p-6 md:p-10 space-y-10">
+
+            <!-- 2. Definisi: Apa Itu Kemiskinan Perkotaan? -->
+            <section class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-blue-800 flex items-center mb-4">
+                    <i data-lucide="search" class="w-7 h-7 mr-3"></i>
+                    Apa Itu Kemiskinan Perkotaan?
+                </h2>
+                <p class="text-lg text-gray-700 mb-6 text-center italic">
+                    Bukan hanya soal "tidak punya uang", tapi bersifat <strong class="font-semibold text-blue-900">Multidimensional</strong>.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Dimensi Ekonomi -->
+                    <div class="bg-blue-100 p-4 rounded-lg flex items-start space-x-3">
+                        <i data-lucide="dollar-sign" class="w-6 h-6 text-blue-700 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-semibold text-blue-900">Ekonomi</h3>
+                            <p class="text-sm text-gray-700">Pendapatan rendah & tidak menentu, sulit penuhi kebutuhan dasar.</p>
+                        </div>
+                    </div>
+                    <!-- Dimensi Akses Layanan -->
+                    <div class="bg-blue-100 p-4 rounded-lg flex items-start space-x-3">
+                        <i data-lucide="heart-pulse" class="w-6 h-6 text-blue-700 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-semibold text-blue-900">Akses Layanan</h3>
+                            <p class="text-sm text-gray-700">Sulit akses air bersih, kesehatan, & pendidikan layak.</p>
+                        </div>
+                    </div>
+                    <!-- Dimensi Sosial -->
+                    <div class="bg-blue-100 p-4 rounded-lg flex items-start space-x-3">
+                        <i data-lucide="users" class="w-6 h-6 text-blue-700 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-semibold text-blue-900">Sosial</h3>
+                            <p class="text-sm text-gray-700">Terpinggirkan (marginalisasi) & rentan diskriminasi.</p>
+                        </div>
+                    </div>
+                    <!-- Dimensi Lingkungan -->
+                    <div class="bg-blue-100 p-4 rounded-lg flex items-start space-x-3">
+                        <i data-lucide="home" class="w-6 h-6 text-blue-700 flex-shrink-0 mt-1"></i>
+                        <div>
+                            <h3 class="font-semibold text-blue-900">Lingkungan</h3>
+                            <p class="text-sm text-gray-700">Tinggal di pemukiman kumuh (slum) & padat.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Penyebab: Mengapa Ini Terjadi? -->
+            <section class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-yellow-800 flex items-center mb-6">
+                    <i data-lucide="arrow-down-circle" class="w-7 h-7 mr-3"></i>
+                    Akar Penyebab (Faktor Struktural)
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="buildings" class="w-8 h-8 text-yellow-700 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-semibold text-yellow-900">Urbanisasi Tak Terkendali</h3>
+                            <p class="text-gray-700">Jumlah pencari kerja > lowongan kerja yang tersedia di kota.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="wrench" class="w-8 h-8 text-yellow-700 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-semibold text-yellow-900">Kesenjangan Keterampilan (Skill Gap)</h3>
+                            <p class="text-gray-700">Tuntutan kerja tinggi, banyak yang tersingkir ke sektor informal.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="trending-up" class="w-8 h-8 text-yellow-700 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-semibold text-yellow-900">Biaya Hidup Tinggi</h3>
+                            <p class="text-gray-700">Upah habis untuk bertahan hidup, sulit menabung/investasi.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="map" class="w-8 h-8 text-yellow-700 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-semibold text-yellow-900">Kebijakan Tata Ruang Belum Adil</h3>
+                            <p class="text-gray-700">Pembangunan lebih fokus ke area komersial daripada perumahan rakyat.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="repeat" class="w-8 h-8 text-yellow-700 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-semibold text-yellow-900">Siklus Kemiskinan</h3>
+                            <p class="text-gray-700">Kemiskinan diwariskan dari orang tua ke anak karena keterbatasan akses.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Dampak: Apa Efeknya? -->
+            <section class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-red-800 flex items-center mb-6">
+                    <i data-lucide="alert-triangle" class="w-7 h-7 mr-3"></i>
+                    Dampak Domino Kemiskinan
+                </h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="siren" class="w-8 h-8 text-red-700 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-semibold text-red-900">Kriminalitas Meningkat</h3>
+                            <p class="text-gray-700">Dianggap "jalan pintas" untuk bertahan hidup.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="activity" class="w-8 h-8 text-red-700 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-semibold text-red-900">Kesehatan Memburuk</h3>
+                            <p class="text-gray-700">Akibat sanitasi buruk, gizi buruk, dan stunting.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="alert-octagon" class="w-8 h-8 text-red-700 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-semibold text-red-900">Kawasan Kumuh (Slums)</h3>
+                            <p class="text-gray-700">Munculnya pemukiman liar yang tidak layak huni.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <i data-lucide="user-minus" class="w-8 h-8 text-red-700 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-semibold text-red-900">Masalah Sosial Lain</h3>
+                            <p class="text-gray-700">Angka putus sekolah, pekerja anak, dan konflik sosial.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Solusi: Apa Jalan Keluarnya? -->
+            <section class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-green-800 flex items-center mb-6">
+                    <i data-lucide="check-circle-2" class="w-7 h-7 mr-3"></i>
+                    Apa Solusinya?
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Solusi Struktural -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-green-900 mb-3">Solusi Struktural (Makro)</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="briefcase" class="w-5 h-5 text-green-700 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Penciptaan Lapangan Kerja Layak (upah layak + jaminan sosial).</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="building-2" class="w-5 h-5 text-green-700 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Penyediaan Perumahan Layak Huni (Rusunawa).</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="school-2" class="w-5 h-5 text-green-700 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Pendidikan & Pelatihan Vokasi (Keterampilan) gratis.</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="shield" class="w-5 h-5 text-green-700 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Perlindungan Sosial (Bansos) yang tepat sasaran & memberdayakan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solusi Komunitas -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-green-900 mb-3">Solusi Komunitas (Mikro)</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="users-2" class="w-5 h-5 text-green-700 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Pemberdayaan Komunitas (Koperasi, Bank Sampah, Urban Farming).</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="eye-off" class="w-5 h-5 text-green-700 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Memutus Stigma (Stop menyalahkan individu, bangun empati).</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="brain" class="w-5 h-5 text-green-700 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Menjadi Kritis (Siswa harus paham akar masalah sistemik).</p>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i data-lucide="move-right" class="w-5 h-5 text-green-700 flex-shrink-0 mt-1"></i>
+                                <p class="text-gray-700">Aksi Nyata (Volunteer, mengajar, menghargai pekerja informal).</p>
+                            </div>
+                        </div>
+                        <!-- Tombol Gemini API untuk Ide Aksi -->
+                        <button id="btn-ide-aksi" class="mt-6 w-full bg-purple-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md hover:bg-purple-700 transition-colors duration-200 flex items-center justify-center space-x-2">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                            <span>✨ Kembangkan Ide Aksi Komunitas</span>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 6. Fitur Gemini: Studi Kasus Fiksi -->
+            <section class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-lg">
+                <h2 class="text-2xl font-bold text-indigo-800 flex items-center mb-4">
+                    <i data-lucide="user-round" class="w-7 h-7 mr-3"></i>
+                    Studi Kasus (Didukung Gemini)
+                </h2>
+                <p class="text-gray-700 mb-4">
+                    Data saja tidak cukup, kita perlu memahami cerita di baliknya. Klik tombol di bawah untuk menghasilkan studi kasus fiksi yang menggambarkan realitas kemiskinan perkotaan.
+                </p>
+                <button id="btn-studi-kasus" class="w-full bg-indigo-600 text-white font-semibold py-3 px-4 rounded-lg shadow-md hover:bg-indigo-700 transition-colors duration-200 flex items-center justify-center space-x-2">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                    <span>✨ Buat Studi Kasus Fiksi</span>
+                </button>
+                <!-- Area Hasil -->
+                <div id="studi-kasus-loading" class="hidden mt-4">
+                    <div class="loader"></div>
+                    <p class="text-center text-gray-600 mt-2">Membuat cerita...</p>
+                </div>
+                <div id="studi-kasus-result" class="mt-4 p-4 bg-indigo-100 rounded-lg text-gray-800 italic" style="white-space: pre-line;">
+                    <!-- Hasil studi kasus akan muncul di sini -->
+                </div>
+            </section>
+
+
+            <!-- 7. Refleksi -->
+            <section class="bg-gray-800 text-white p-8 text-center rounded-lg">
+                <h2 class="text-2xl font-bold mb-4 flex items-center justify-center">
+                    <i data-lucide="star" class="w-7 h-7 mr-3"></i>
+                    Refleksi Kita
+                </h2>
+                <p class="text-2xl md:text-3xl font-bold tracking-wider text-gray-300">
+                    <span class="text-blue-400">PAHAMI</span> 
+                    <span class="mx-2">→</span> 
+                    <span class="text-yellow-400">PEDULI</span> 
+                    <span class="mx-2">→</span> 
+                    <span class="text-green-400">BERAKSI</span>
+                </p>
+                <p class="mt-3 text-gray-400">Ini adalah masalah bersama yang disebabkan oleh sistem. Kalian adalah bagian dari solusi.</p>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Modal Pop-up untuk Ide Aksi Gemini -->
+    <div id="gemini-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-white rounded-xl shadow-2xl max-w-lg w-full p-6 md:p-8 relative">
+            <!-- Tombol Close Modal -->
+            <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700">
+                <i data-lucide="x" class="w-7 h-7"></i>
+            </button>
+            
+            <h2 class="text-2xl font-bold text-purple-800 flex items-center mb-4">
+                <i data-lucide="sparkles" class="w-6 h-6 mr-2"></i>
+                Ide Aksi Komunitas
+            </h2>
+            
+            <!-- Area Hasil Modal -->
+            <div id="ide-aksi-loading" class="hidden my-6">
+                <div class="loader"></div>
+                <p class="text-center text-gray-600 mt-2">Mencari ide...</p>
+            </div>
+            <div id="ide-aksi-result" class_="text-gray-700 mt-4" style="white-space: pre-line; max-height: 60vh; overflow-y: auto;">
+                <!-- Hasil ide aksi akan muncul di sini -->
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Script untuk mengaktifkan ikon Lucide -->
+    <script>
+        lucide.createIcons();
+    </script>
+
+    <!-- Script untuk Gemini API -->
+    <script type="module">
+        const btnStudiKasus = document.getElementById('btn-studi-kasus');
+        const resultStudiKasus = document.getElementById('studi-kasus-result');
+        const loadingStudiKasus = document.getElementById('studi-kasus-loading');
+
+        const btnIdeAksi = document.getElementById('btn-ide-aksi');
+        const modal = document.getElementById('gemini-modal');
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        const modalResult = document.getElementById('ide-aksi-result');
+        const modalLoading = document.getElementById('ide-aksi-loading');
+
+        const apiKey = ""; // Kunci API tidak diperlukan untuk model ini
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+        /**
+         * Panggil Gemini API dengan logika retry (Exponential Backoff)
+         * @param {string} prompt - Prompt untuk dikirim ke Gemini
+         * @param {number} maxRetries - Jumlah maksimum percobaan ulang
+         * @param {number} baseDelay - Waktu tunggu dasar dalam milidetik
+         * @returns {Promise<string>} - Teks respons dari API
+         */
+        async function callGeminiWithRetry(prompt, maxRetries = 3, baseDelay = 1000) {
+            let attempt = 0;
+            while (attempt < maxRetries) {
+                try {
+                    const payload = {
+                        contents: [{ parts: [{ text: prompt }] }],
+                    };
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates[0]?.content?.parts[0]?.text) {
+                        return result.candidates[0].content.parts[0].text;
+                    } else {
+                        throw new Error("Respons API tidak valid atau tidak berisi teks.");
+                    }
+                } catch (error) {
+                    attempt++;
+                    if (attempt >= maxRetries) {
+                        console.error("Gagal memanggil Gemini API setelah beberapa percobaan:", error);
+                        return "Maaf, terjadi kesalahan saat menghubungi server. Silakan coba lagi nanti.";
+                    }
+                    const delay = baseDelay * Math.pow(2, attempt - 1); // 1s, 2s, 4s, ...
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                }
+            }
+            return "Maaf, terjadi kesalahan. Silakan coba lagi.";
+        }
+
+
+        // --- Logika Modal ---
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            modalResult.innerHTML = ""; // Bersihkan hasil saat ditutup
+        }
+
+        modalCloseBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            // Tutup modal jika klik di luar area konten
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+
+        // --- Event Listener untuk Tombol ---
+        
+        // 1. Tombol Studi Kasus
+        btnStudiKasus.addEventListener('click', async () => {
+            loadingStudiKasus.classList.remove('hidden');
+            resultStudiKasus.innerHTML = ""; // Bersihkan hasil sebelumnya
+            btnStudiKasus.disabled = true;
+
+            const promptStudiKasus = `Anda adalah seorang sosiolog. Tuliskan satu studi kasus fiksi yang singkat (sekitar 100 kata) tentang seseorang yang mengalami kemiskinan perkotaan di Indonesia. Fokus pada aspek multidimensional (ekonomi, sosial, lingkungan) dan gunakan bahasa yang mudah dipahami untuk siswa SMA.`;
+            
+            const responseText = await callGeminiWithRetry(promptStudiKasus);
+            
+            resultStudiKasus.innerHTML = responseText;
+            loadingStudiKasus.classList.add('hidden');
+            btnStudiKasus.disabled = false;
+        });
+
+        // 2. Tombol Ide Aksi
+        btnIdeAksi.addEventListener('click', async () => {
+            openModal();
+            modalLoading.classList.remove('hidden');
+            modalResult.innerHTML = "";
+            btnIdeAksi.disabled = true;
+
+            const promptIdeAksi = `Anda adalah seorang guru sosiologi yang suportif. Berdasarkan daftar solusi komunitas untuk kemiskinan (seperti koperasi, bank sampah, urban farming), berikan satu ide proyek komunitas yang konkret dan bisa diinisiasi oleh sekelompok siswa SMA di lingkungan mereka. Jelaskan langkah-langkah awalnya secara singkat (sekitar 100-150 kata). Buat dalam format poin-poin agar mudah dibaca.`;
+
+            const responseText = await callGeminiWithRetry(promptIdeAksi);
+            
+            modalResult.innerHTML = responseText;
+            modalLoading.classList.add('hidden');
+            btnIdeAksi.disabled = false;
+        });
+
+    </script>
+
+</body>
+</html>
+
